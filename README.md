@@ -6,7 +6,9 @@ A versatile money tracking application built using Flutter. It allows users to l
 
 - Log Expenses
 
-https://www.figma.com/file/fnYVNpAAEWsfEfMGgHx77C/CashLog?type=design&node-id=1%3A36&mode=design&t=ERtEnodvU7RFKhsB-1
+## Prototype
+
+**Note:** You need to log in first to run this prototype.
 
 https://www.figma.com/proto/fnYVNpAAEWsfEfMGgHx77C/CashLog?page-id=1%3A36&type=design&node-id=13-654&viewport=442%2C280%2C0.54&t=n2gDk4D3UXA7wCjH-1&scaling=scale-down&starting-point-node-id=13%3A654&mode=design
 
