@@ -1,4 +1,5 @@
 import 'dart:ui';
+import 'package:flutter/material.dart';
 
 // Colors
 const Color primaryDark = Color(0xFF141720);
@@ -23,3 +24,12 @@ const double defaultRadius = 12.0;
 const double fontSizeHeading = 18.0;
 const double fontSizeTitle = 16.0;
 const double fontSizeBody = 14.0;
+
+ThemeData appTheme = ThemeData(
+  fontFamily: 'Inter',
+  scaffoldBackgroundColor: background,
+  appBarTheme: AppBarTheme(
+    backgroundColor: background, // Set the background color of the AppBar
+    centerTitle: true,
+  ),
+);
