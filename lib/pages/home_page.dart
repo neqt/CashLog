@@ -164,7 +164,6 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                 ),
-                // snapshot.data!.sort((a, b) => b['date'].compareTo(a['date']));
 
                 ListView.builder(
                   shrinkWrap: true,
@@ -174,12 +173,14 @@ class _HomePageState extends State<HomePage> {
                     Map dataAtIndex = snapshot.data![index];
                     if (dataAtIndex['type'] == 'Income') {
                       return IncomeTile(
-                          value: dataAtIndex['amount'],
-                          note: dataAtIndex['note']);
+                        value: dataAtIndex['amount'],
+                        note: dataAtIndex['note'],
+                      );
                     } else {
                       return ExpenseTile(
-                          value: dataAtIndex['amount'],
-                          note: dataAtIndex['note']);
+                        value: dataAtIndex['amount'],
+                        note: dataAtIndex['note'],
+                      );
                     }
                   },
                 ),

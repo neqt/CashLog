@@ -34,14 +34,26 @@ class ExpensesCard extends StatelessWidget {
                 color: Colors.red[900],
               ),
             ),
-            Text(
-              '$value',
-              style: TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.w800,
-                color: primaryDark,
+            RichText(
+              text: TextSpan(
+                text: 'THB',
+                style: TextStyle(
+                  fontSize: 14,
+                  fontWeight: FontWeight.w300,
+                  color: secondaryDark,
+                ),
+                children: [
+                  TextSpan(
+                    text: ' $value',
+                    style: TextStyle(
+                      fontSize: 24,
+                      fontWeight: FontWeight.w800,
+                      color: primaryDark,
+                    ),
+                  ),
+                ],
               ),
-            ),
+            )
           ],
         ),
       ],

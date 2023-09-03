@@ -29,7 +29,7 @@ ThemeData appTheme = ThemeData(
   fontFamily: 'Inter',
   scaffoldBackgroundColor: background,
   appBarTheme: AppBarTheme(
-    backgroundColor: background, // Set the background color of the AppBar
+    backgroundColor: background,
     centerTitle: true,
   ),
 );
