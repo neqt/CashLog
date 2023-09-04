@@ -17,6 +17,7 @@ class _AddTransactionState extends State<AddTransaction> {
   String type = "Expense";
   DateTime selectedDate = DateTime.now();
 
+  TransactionItem transactionItem = TransactionItem();
   final DateFormat _dateFormat = DateFormat('MMM dd, yyyy', 'en_US');
 
   Future<void> _selectDate(BuildContext context) async {
@@ -213,7 +214,7 @@ class _AddTransactionState extends State<AddTransaction> {
                       ),
                       padding: EdgeInsets.all(12),
                       child: Icon(
-                        Icons.calendar_month_rounded,
+                        Icons.edit_calendar_rounded,
                         color: secondaryDark,
                       ),
                     ),
@@ -241,12 +242,13 @@ class _AddTransactionState extends State<AddTransaction> {
               child: ElevatedButton(
                 onPressed: () async {
                   if (amount != null && note.isNotEmpty) {
-                    TransactionItem transactionItem = TransactionItem();
                     await transactionItem.addData(
                         amount!, selectedDate, note, type);
                     Navigator.of(context).pop();
-                  } else {
-                    print('Please ensure that all values are provided.');
+                  } else if (amount != null && note.isEmpty) {
+                    await transactionItem.addData(
+                        amount!, selectedDate, 'note', type);
+                    Navigator.of(context).pop();
                   }
                 },
                 child: Text(

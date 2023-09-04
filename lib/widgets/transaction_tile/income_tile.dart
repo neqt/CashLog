@@ -14,18 +14,24 @@ class IncomeTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(vertical: 8),
       padding: EdgeInsets.symmetric(vertical: 20, horizontal: 28),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Row(
             children: [
-              Icon(
-                Icons.style_rounded,
-                color: secondaryDark,
+              Container(
+                decoration: BoxDecoration(
+                  color: tertiaryMain,
+                  borderRadius: BorderRadius.circular(16),
+                ),
+                padding: EdgeInsets.all(10),
+                child: Icon(
+                  Icons.savings_rounded,
+                  color: secondaryDark,
+                ),
+                margin: EdgeInsets.only(right: 12),
               ),
-              SizedBox(width: 15),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -61,7 +67,7 @@ class IncomeTile extends StatelessWidget {
                     TextSpan(
                       text: ' +$value',
                       style: TextStyle(
-                        color: Colors.teal[900],
+                        color: Colors.green[800],
                         fontSize: 24,
                         fontWeight: FontWeight.w500,
                       ),

@@ -33,38 +33,6 @@ class _ScreenState extends State<Screen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: PreferredSize(
-        preferredSize: Size.fromHeight(56),
-        child: AppBar(
-          elevation: 0,
-          title: Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              Icon(
-                Icons.storage_rounded,
-                size: 24,
-                color: accent,
-              ),
-              SizedBox(width: 8),
-              Text(
-                'CashLog',
-                style:
-                    TextStyle(color: primaryDark, fontWeight: FontWeight.w900),
-              ),
-            ],
-          ),
-          actions: [
-            IconButton(
-              icon: Icon(
-                Icons.search,
-                size: 24,
-                color: primaryDark,
-              ),
-              onPressed: () {},
-            ),
-          ],
-        ),
-      ),
       body: buildPageContent(currentIndex),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: currentIndex,
@@ -77,7 +45,6 @@ class _ScreenState extends State<Screen> {
         selectedFontSize: 12,
         unselectedItemColor: secondaryLight,
         backgroundColor: primaryLight,
-        // showSelectedLabels: false,
         items: [
           BottomNavigationBarItem(
             icon: Icon(Icons.home_rounded),

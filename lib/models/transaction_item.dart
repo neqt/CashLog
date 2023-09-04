@@ -13,10 +13,19 @@ class TransactionItem {
 
   Future addData(int amount, DateTime date, String note, String type) async {
     var value = {'amount': amount, 'date': date, 'note': note, 'type': type};
-    box.add(value);
+    
+    List<dynamic> currentData = box.values.toList();
+    
+    currentData.insert(0, value);
+    await box.clear();
+
+    for (var item in currentData) {
+      box.add(item);
+    }
   }
 
-  Future deleteData(int amount, DateTime date, String note, String type) async {
+  Future<void> deleteData(
+      int amount, DateTime date, String note, String type) async {
     var value = {'amount': amount, 'date': date, 'note': note, 'type': type};
     box.delete(value);
   }

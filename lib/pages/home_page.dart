@@ -36,9 +36,48 @@ class _HomePageState extends State<HomePage> {
     });
   }
 
+  Future<void> _deleteTransaction(
+      int amount, DateTime date, String note, String type) async {
+    await transactionItem.deleteData(amount, date, note, type);
+
+    setState(() {});
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(56),
+        child: AppBar(
+          elevation: 0,
+          title: Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Icon(
+                Icons.amp_stories_rounded,
+                size: 26,
+                color: accent,
+              ),
+              SizedBox(width: 8),
+              Text(
+                'CashLog',
+                style:
+                    TextStyle(color: primaryDark, fontWeight: FontWeight.w900),
+              ),
+            ],
+          ),
+          actions: [
+            IconButton(
+              icon: Icon(
+                Icons.search,
+                size: 24,
+                color: primaryDark,
+              ),
+              onPressed: () {},
+            ),
+          ],
+        ),
+      ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           showModalBottomSheet(
@@ -142,7 +181,7 @@ class _HomePageState extends State<HomePage> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             IncomeCard(value: totalIncome),
-                            SizedBox(width: 40),
+                            SizedBox(width: 30),
                             ExpensesCard(value: totalExpenses),
                           ],
                         ),
@@ -164,7 +203,6 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                 ),
-
                 ListView.builder(
                   shrinkWrap: true,
                   physics: NeverScrollableScrollPhysics(),
@@ -180,7 +218,28 @@ class _HomePageState extends State<HomePage> {
                       return ExpenseTile(
                         value: dataAtIndex['amount'],
                         note: dataAtIndex['note'],
+                        onDelete: () {
+                          _deleteTransaction(
+                            dataAtIndex['amount'],
+                            dataAtIndex['date'],
+                            dataAtIndex['note'],
+                            dataAtIndex['type'],
+                          );
+                        },
                       );
+                      // return ExpenseTile(
+                      //   value: dataAtIndex['amount'],
+                      //   note: dataAtIndex['note'],
+                      //   onDelete: () {
+                      //     print('delete');
+                      //     transactionItem.deleteData(
+                      //       dataAtIndex['amount'],
+                      //       dataAtIndex['date'],
+                      //       dataAtIndex['note'],
+                      //       dataAtIndex['type'],
+                      //     );
+                      //   },
+                      // );
                     }
                   },
                 ),
