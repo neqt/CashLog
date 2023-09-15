@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "936073536506",
+    "project_id": "cashlog-48d80",
+    "storage_bucket": "cashlog-48d80.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:936073536506:android:629be65751bbd19c60ba43",
+        "android_client_info": {
+          "package_name": "com.example.cashlog"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBhfmtos1ZuxifU0oNoGwoFqs5k-cgnTwg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
