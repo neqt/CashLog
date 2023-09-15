@@ -20,9 +20,9 @@ class _ScreenState extends State<Screen> {
       case 0:
         return const HomePage();
       case 1:
-        return const SplitPage();
-      case 2:
         return const BudgetPage();
+      case 2:
+        return const SplitPage();
       case 3:
         return const StatPage();
       default:
@@ -51,12 +51,12 @@ class _ScreenState extends State<Screen> {
             label: 'Home',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.toll_rounded),
-            label: 'Split',
-          ),
-          BottomNavigationBarItem(
             icon: Icon(Icons.donut_large_rounded),
             label: 'Budget',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.toll_rounded),
+            label: 'Split',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.bar_chart_rounded),

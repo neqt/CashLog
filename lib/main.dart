@@ -1,3 +1,4 @@
+import 'package:cashlog/models/money_model.dart';
 import 'package:cashlog/screen.dart';
 import 'package:cashlog/utils/constants.dart';
 import 'package:flutter/material.dart';
@@ -5,7 +6,8 @@ import 'package:hive_flutter/adapters.dart';
 
 void main() async {
   await Hive.initFlutter();
-  await Hive.openBox('money');
+  Hive.registerAdapter(MoneymodelAdapter());
+  await Hive.openBox<Money_model>('money');
   runApp(const MyApp());
 }
 

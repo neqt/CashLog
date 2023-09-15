@@ -6,14 +6,14 @@ import 'package:flutter/services.dart';
 import 'package:hive/hive.dart';
 import 'package:intl/intl.dart';
 
-class AddTransaction extends StatefulWidget {
-  const AddTransaction({super.key});
+class EditTransaction extends StatefulWidget {
+  const EditTransaction({super.key});
 
   @override
-  State<AddTransaction> createState() => _AddTransactionState();
+  State<EditTransaction> createState() => _EditTransactionState();
 }
 
-class _AddTransactionState extends State<AddTransaction> {
+class _EditTransactionState extends State<EditTransaction> {
   final box = Hive.box<Money_model>('money');
 
   final TextEditingController amountController = TextEditingController();
@@ -69,7 +69,7 @@ class _AddTransactionState extends State<AddTransaction> {
               children: [
                 Expanded(
                   child: Text(
-                    'New Transaction',
+                    'Edit Transaction',
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       color: background,
