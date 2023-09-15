@@ -5,6 +5,7 @@ A versatile money tracking application built using Flutter. It allows users to l
 ## Features
 
 - Log Expenses
+- Monthly Budget
 
 ## Prototype
 
